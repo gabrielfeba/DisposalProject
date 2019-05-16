@@ -6,8 +6,8 @@
 package disposalproject;
 
 /**
- *
- * @author gabrielfeba
+ * @author djairtb
+ * @author gabrielfeba  
  */
 public class DisposalProject {
 
