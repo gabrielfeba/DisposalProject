@@ -31,18 +31,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaPorTipo = new javax.swing.JPanel();
         telaPorEstado = new javax.swing.JPanel();
         telaPorDia = new javax.swing.JPanel();
+        registrarInformacoes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        painelPrincipal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         javax.swing.GroupLayout telaPorTipoLayout = new javax.swing.GroupLayout(telaPorTipo);
         telaPorTipo.setLayout(telaPorTipoLayout);
         telaPorTipoLayout.setHorizontalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
         );
         telaPorTipoLayout.setVerticalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 412, Short.MAX_VALUE)
         );
 
         painelPrincipal.addTab("POR TIPO", telaPorTipo);
@@ -51,11 +54,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaPorEstado.setLayout(telaPorEstadoLayout);
         telaPorEstadoLayout.setHorizontalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
         );
         telaPorEstadoLayout.setVerticalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 412, Short.MAX_VALUE)
         );
 
         painelPrincipal.addTab("POR ESTADO", telaPorEstado);
@@ -64,30 +67,55 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaPorDia.setLayout(telaPorDiaLayout);
         telaPorDiaLayout.setHorizontalGroup(
             telaPorDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
         );
         telaPorDiaLayout.setVerticalGroup(
             telaPorDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 412, Short.MAX_VALUE)
         );
 
         painelPrincipal.addTab("POR DIA", telaPorDia);
+
+        registrarInformacoes.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        registrarInformacoes.setText("REGISTRAR INFORMAÇÕES DO DIA");
+        registrarInformacoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarInformacoesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelPrincipal)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(registrarInformacoes)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelPrincipal)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(registrarInformacoes)
+                .addGap(0, 14, Short.MAX_VALUE))
         );
 
         painelPrincipal.getAccessibleContext().setAccessibleName("Por Dia");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void registrarInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarInformacoesActionPerformed
+        TelaCadastro telaCadastro = new TelaCadastro();
+        telaCadastro.setVisible(true);
+        
+    }//GEN-LAST:event_registrarInformacoesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -126,6 +154,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane painelPrincipal;
+    private javax.swing.JButton registrarInformacoes;
     private javax.swing.JPanel telaPorDia;
     private javax.swing.JPanel telaPorEstado;
     private javax.swing.JPanel telaPorTipo;
