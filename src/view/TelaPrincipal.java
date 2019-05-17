@@ -109,6 +109,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         painelPrincipal.getAccessibleContext().setAccessibleName("Por Dia");
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarInformacoesActionPerformed
