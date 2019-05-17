@@ -27,22 +27,207 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txPapel1 = new javax.swing.JTextField();
+        pnGravar = new javax.swing.JPanel();
+        lbPapel = new javax.swing.JLabel();
+        lbOrganico = new javax.swing.JLabel();
+        lbNaoReciclavel = new javax.swing.JLabel();
+        txMetal = new javax.swing.JTextField();
+        txPlastico = new javax.swing.JTextField();
+        txPapel = new javax.swing.JTextField();
+        txOrganico = new javax.swing.JTextField();
+        lbMetal = new javax.swing.JLabel();
+        txNaoReciclavel = new javax.swing.JTextField();
+        lbPlastico = new javax.swing.JLabel();
+        btGravar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        lbCadastrarNovoRegistro = new javax.swing.JLabel();
+        btTelaInicial = new javax.swing.JButton();
+
+        txPapel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txPapel1ActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        pnGravar.setBorder(javax.swing.BorderFactory.createTitledBorder("Gravar"));
+
+        lbPapel.setText("Papel:");
+
+        lbOrganico.setText("Orgânico:");
+
+        lbNaoReciclavel.setText("Não Reciclável:");
+
+        txMetal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txMetalActionPerformed(evt);
+            }
+        });
+
+        txPlastico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txPlasticoActionPerformed(evt);
+            }
+        });
+
+        txPapel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txPapelActionPerformed(evt);
+            }
+        });
+
+        txOrganico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txOrganicoActionPerformed(evt);
+            }
+        });
+
+        lbMetal.setText("Metal:");
+
+        txNaoReciclavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txNaoReciclavelActionPerformed(evt);
+            }
+        });
+
+        lbPlastico.setText("Plástico:");
+
+        btGravar.setText("Gravar");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SP", "BA", "MG" }));
+        jComboBox1.setAutoscrolls(true);
+
+        javax.swing.GroupLayout pnGravarLayout = new javax.swing.GroupLayout(pnGravar);
+        pnGravar.setLayout(pnGravarLayout);
+        pnGravarLayout.setHorizontalGroup(
+            pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnGravarLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbPapel)
+                    .addComponent(lbPlastico)
+                    .addComponent(lbMetal))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txMetal)
+                    .addComponent(txPlastico)
+                    .addComponent(txPapel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnGravarLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(btGravar))
+                    .addGroup(pnGravarLayout.createSequentialGroup()
+                        .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lbNaoReciclavel)
+                            .addComponent(lbOrganico))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txOrganico)
+                            .addComponent(txNaoReciclavel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(67, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnGravarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        pnGravarLayout.setVerticalGroup(
+            pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnGravarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbMetal)
+                    .addComponent(lbOrganico)
+                    .addComponent(txMetal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txOrganico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbPlastico)
+                    .addComponent(lbNaoReciclavel)
+                    .addComponent(txPlastico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txNaoReciclavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbPapel)
+                    .addComponent(txPapel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btGravar))
+                .addContainerGap())
+        );
+
+        lbCadastrarNovoRegistro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbCadastrarNovoRegistro.setText("CADASTRAR NOVO REGISTRO:");
+
+        btTelaInicial.setText("Tela Inicial");
+        btTelaInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btTelaInicialActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 601, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(btTelaInicial))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(lbCadastrarNovoRegistro))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(pnGravar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 473, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(lbCadastrarNovoRegistro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(pnGravar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btTelaInicial)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txMetalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txMetalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txMetalActionPerformed
+
+    private void txPlasticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPlasticoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txPlasticoActionPerformed
+
+    private void txPapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPapelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txPapelActionPerformed
+
+    private void txPapel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPapel1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txPapel1ActionPerformed
+
+    private void txOrganicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txOrganicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txOrganicoActionPerformed
+
+    private void txNaoReciclavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNaoReciclavelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txNaoReciclavelActionPerformed
+
+    private void btTelaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaInicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btTelaInicialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +265,21 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGravar;
+    private javax.swing.JButton btTelaInicial;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JLabel lbCadastrarNovoRegistro;
+    private javax.swing.JLabel lbMetal;
+    private javax.swing.JLabel lbNaoReciclavel;
+    private javax.swing.JLabel lbOrganico;
+    private javax.swing.JLabel lbPapel;
+    private javax.swing.JLabel lbPlastico;
+    private javax.swing.JPanel pnGravar;
+    private javax.swing.JTextField txMetal;
+    private javax.swing.JTextField txNaoReciclavel;
+    private javax.swing.JTextField txOrganico;
+    private javax.swing.JTextField txPapel;
+    private javax.swing.JTextField txPapel1;
+    private javax.swing.JTextField txPlastico;
     // End of variables declaration//GEN-END:variables
 }
