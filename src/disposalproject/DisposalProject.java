@@ -5,6 +5,7 @@
  */
 package disposalproject;
 
+import controller.ManipulaDados;
 import view.TelaPrincipal;
 
 /**
@@ -17,8 +18,11 @@ public class DisposalProject {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        
         TelaPrincipal telaPrincipal = new TelaPrincipal();
         telaPrincipal.setVisible(true);
+        
     }
     
 }

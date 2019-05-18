@@ -5,6 +5,10 @@
  */
 package view;
 
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import controller.ManipulaDados;
+
 /**
  *
  * @author djairtb
@@ -27,28 +31,20 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txPapel1 = new javax.swing.JTextField();
         pnGravar = new javax.swing.JPanel();
         lbPapel = new javax.swing.JLabel();
-        lbOrganico = new javax.swing.JLabel();
+        lbVidro = new javax.swing.JLabel();
         lbNaoReciclavel = new javax.swing.JLabel();
         txMetal = new javax.swing.JTextField();
         txPlastico = new javax.swing.JTextField();
         txPapel = new javax.swing.JTextField();
-        txOrganico = new javax.swing.JTextField();
+        txVidro = new javax.swing.JTextField();
         lbMetal = new javax.swing.JLabel();
         txNaoReciclavel = new javax.swing.JTextField();
         lbPlastico = new javax.swing.JLabel();
         btGravar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        cbEstado = new javax.swing.JComboBox();
         lbCadastrarNovoRegistro = new javax.swing.JLabel();
-        btTelaInicial = new javax.swing.JButton();
-
-        txPapel1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txPapel1ActionPerformed(evt);
-            }
-        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -56,7 +52,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         lbPapel.setText("Papel:");
 
-        lbOrganico.setText("Orgânico:");
+        lbVidro.setText("Vidro:");
 
         lbNaoReciclavel.setText("Não Reciclável:");
 
@@ -78,9 +74,9 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        txOrganico.addActionListener(new java.awt.event.ActionListener() {
+        txVidro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txOrganicoActionPerformed(evt);
+                txVidroActionPerformed(evt);
             }
         });
 
@@ -95,9 +91,14 @@ public class TelaCadastro extends javax.swing.JFrame {
         lbPlastico.setText("Plástico:");
 
         btGravar.setText("Gravar");
+        btGravar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGravarActionPerformed(evt);
+            }
+        });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SP", "BA", "MG" }));
-        jComboBox1.setAutoscrolls(true);
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SP", "BA", "MG" }));
+        cbEstado.setAutoscrolls(true);
 
         javax.swing.GroupLayout pnGravarLayout = new javax.swing.GroupLayout(pnGravar);
         pnGravar.setLayout(pnGravarLayout);
@@ -114,7 +115,6 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(txMetal)
                     .addComponent(txPlastico)
                     .addComponent(txPapel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
                 .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnGravarLayout.createSequentialGroup()
                         .addGap(43, 43, 43)
@@ -122,28 +122,28 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addGroup(pnGravarLayout.createSequentialGroup()
                         .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lbNaoReciclavel)
-                            .addComponent(lbOrganico))
+                            .addComponent(lbVidro))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txOrganico)
+                            .addComponent(txVidro)
                             .addComponent(txNaoReciclavel, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(67, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnGravarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         pnGravarLayout.setVerticalGroup(
             pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnGravarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbMetal)
-                    .addComponent(lbOrganico)
+                    .addComponent(lbVidro)
                     .addComponent(txMetal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txOrganico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txVidro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnGravarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbPlastico)
@@ -161,22 +161,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         lbCadastrarNovoRegistro.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lbCadastrarNovoRegistro.setText("CADASTRAR NOVO REGISTRO:");
 
-        btTelaInicial.setText("Tela Inicial");
-        btTelaInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btTelaInicialActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(btTelaInicial))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(89, 89, 89)
                         .addComponent(lbCadastrarNovoRegistro))
@@ -192,9 +182,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addComponent(lbCadastrarNovoRegistro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnGravar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btTelaInicial)
-                .addContainerGap())
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -213,21 +201,35 @@ public class TelaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txPapelActionPerformed
 
-    private void txPapel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPapel1ActionPerformed
+    private void txVidroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txVidroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txPapel1ActionPerformed
-
-    private void txOrganicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txOrganicoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txOrganicoActionPerformed
+    }//GEN-LAST:event_txVidroActionPerformed
 
     private void txNaoReciclavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNaoReciclavelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txNaoReciclavelActionPerformed
 
-    private void btTelaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTelaInicialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btTelaInicialActionPerformed
+    private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
+        boolean erro = false;
+        try{
+            double metal = Double.parseDouble(txMetal.getText());
+            double plastico = Double.parseDouble(txPlastico.getText());
+            double vidro = Double.parseDouble(txVidro.getText());
+            double papel = Double.parseDouble(txPapel.getText());
+            double naoReciclavel =Double.parseDouble(txNaoReciclavel.getText());
+            String estado = String.valueOf(cbEstado.getSelectedItem());
+            ManipulaDados.novoRegistro(metal, vidro, plastico, papel, naoReciclavel, estado);
+        }catch(java.lang.NumberFormatException t){
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Insira valores válidos!");
+            erro = true;
+        }
+        if (erro != true){
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Valores Cadastrados com Sucesso!");
+            dispose();
+        }
+    }//GEN-LAST:event_btGravarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,20 +268,18 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGravar;
-    private javax.swing.JButton btTelaInicial;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox cbEstado;
     private javax.swing.JLabel lbCadastrarNovoRegistro;
     private javax.swing.JLabel lbMetal;
     private javax.swing.JLabel lbNaoReciclavel;
-    private javax.swing.JLabel lbOrganico;
     private javax.swing.JLabel lbPapel;
     private javax.swing.JLabel lbPlastico;
+    private javax.swing.JLabel lbVidro;
     private javax.swing.JPanel pnGravar;
     private javax.swing.JTextField txMetal;
     private javax.swing.JTextField txNaoReciclavel;
-    private javax.swing.JTextField txOrganico;
     private javax.swing.JTextField txPapel;
-    private javax.swing.JTextField txPapel1;
     private javax.swing.JTextField txPlastico;
+    private javax.swing.JTextField txVidro;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,14 +5,19 @@
  */
 package view;
 
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import controller.ManipulaDados;
+
 /**
  *
  * @author djairtb
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaPrincipal
+     * @param registraLixo
      */
     public TelaPrincipal() {
         initComponents();
@@ -29,6 +34,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelPrincipal = new javax.swing.JTabbedPane();
         telaPorTipo = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         telaPorEstado = new javax.swing.JPanel();
         telaPorDia = new javax.swing.JPanel();
         registrarInformacoes = new javax.swing.JButton();
@@ -37,15 +43,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelPrincipal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
+        jButton1.setText("Mostrar Valores");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout telaPorTipoLayout = new javax.swing.GroupLayout(telaPorTipo);
         telaPorTipo.setLayout(telaPorTipoLayout);
         telaPorTipoLayout.setHorizontalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 584, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaPorTipoLayout.createSequentialGroup()
+                .addContainerGap(231, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(246, 246, 246))
         );
         telaPorTipoLayout.setVerticalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGroup(telaPorTipoLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addComponent(jButton1)
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         painelPrincipal.addTab("POR TIPO", telaPorTipo);
@@ -118,6 +137,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_registrarInformacoesActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -154,6 +177,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JTabbedPane painelPrincipal;
     private javax.swing.JButton registrarInformacoes;
     private javax.swing.JPanel telaPorDia;
