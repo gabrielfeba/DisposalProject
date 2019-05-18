@@ -6,6 +6,7 @@
 package disposalproject;
 
 import controller.ManipulaDados;
+import java.awt.event.ActionEvent;
 import view.TelaPrincipal;
 
 /**
@@ -22,7 +23,7 @@ public class DisposalProject {
         
         TelaPrincipal telaPrincipal = new TelaPrincipal();
         telaPrincipal.setVisible(true);
-        
+        telaPrincipal.getRegistrarInformacoes().doClick();
     }
     
 }

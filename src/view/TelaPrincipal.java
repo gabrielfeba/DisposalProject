@@ -8,6 +8,10 @@ package view;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import controller.ManipulaDados;
+import java.awt.BorderLayout;
+import javax.swing.JButton;
+import models.Graficos;
+import org.jfree.chart.ChartPanel;
 
 /**
  *
@@ -34,8 +38,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelPrincipal = new javax.swing.JTabbedPane();
         telaPorTipo = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        pnGraficoTipo = new javax.swing.JPanel();
         telaPorEstado = new javax.swing.JPanel();
+        pnGraficoEstado = new javax.swing.JPanel();
         telaPorDia = new javax.swing.JPanel();
         registrarInformacoes = new javax.swing.JButton();
 
@@ -43,41 +48,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         painelPrincipal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jButton1.setText("Mostrar Valores");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        pnGraficoTipo.setBackground(new java.awt.Color(102, 102, 255));
+        pnGraficoTipo.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout telaPorTipoLayout = new javax.swing.GroupLayout(telaPorTipo);
         telaPorTipo.setLayout(telaPorTipoLayout);
         telaPorTipoLayout.setHorizontalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaPorTipoLayout.createSequentialGroup()
-                .addContainerGap(231, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(246, 246, 246))
+                .addContainerGap()
+                .addComponent(pnGraficoTipo, javax.swing.GroupLayout.DEFAULT_SIZE, 564, Short.MAX_VALUE)
+                .addContainerGap())
         );
         telaPorTipoLayout.setVerticalGroup(
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaPorTipoLayout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addComponent(jButton1)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(pnGraficoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         painelPrincipal.addTab("POR TIPO", telaPorTipo);
+
+        pnGraficoEstado.setBackground(new java.awt.Color(255, 153, 0));
+        pnGraficoEstado.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout telaPorEstadoLayout = new javax.swing.GroupLayout(telaPorEstado);
         telaPorEstado.setLayout(telaPorEstadoLayout);
         telaPorEstadoLayout.setHorizontalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 584, Short.MAX_VALUE)
+            .addGroup(telaPorEstadoLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         telaPorEstadoLayout.setVerticalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGroup(telaPorEstadoLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         painelPrincipal.addTab("POR ESTADO", telaPorEstado);
@@ -109,9 +119,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(painelPrincipal)
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(registrarInformacoes)))
                 .addContainerGap())
@@ -132,15 +142,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarInformacoesActionPerformed
-        TelaCadastro telaCadastro = new TelaCadastro();
+        TelaCadastro telaCadastro = new TelaCadastro(pnGraficoTipo);
         telaCadastro.setVisible(true);
         
     }//GEN-LAST:event_registrarInformacoesActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -175,10 +181,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    public JButton getRegistrarInformacoes() {
+        return registrarInformacoes;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JTabbedPane painelPrincipal;
+    private javax.swing.JPanel pnGraficoEstado;
+    private javax.swing.JPanel pnGraficoTipo;
     private javax.swing.JButton registrarInformacoes;
     private javax.swing.JPanel telaPorDia;
     private javax.swing.JPanel telaPorEstado;

@@ -17,7 +17,14 @@ public class Dados {
     private Double naoReciclavel;
     private String estado;
 
-    public Dados(Double metal, Double plastico, Double papel, Double vidro, Double naoReciclavel, String estado) {
+    public Dados(Double metal, Double plastico, Double papel, Double vidro, Double naoReciclavel) {
+        this.metal = metal;
+        this.plastico = plastico;
+        this.papel = papel;
+        this.vidro = vidro;
+        this.naoReciclavel = naoReciclavel;
+    }
+        public Dados(Double metal, Double plastico, Double papel, Double vidro, Double naoReciclavel,String estado) {
         this.metal = metal;
         this.plastico = plastico;
         this.papel = papel;

@@ -8,18 +8,26 @@ package view;
 import java.awt.Component;
 import javax.swing.JOptionPane;
 import controller.ManipulaDados;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import models.Graficos;
 
 /**
  *
  * @author djairtb
  */
 public class TelaCadastro extends javax.swing.JFrame {
-
+    JPanel pnGraficoTipo;
     /**
      * Creates new form TelaCadastro
      */
     public TelaCadastro() {
         initComponents();
+    }
+
+    TelaCadastro(JPanel pnGraficoTipo) {
+        initComponents();
+        this.pnGraficoTipo = pnGraficoTipo;
     }
 
     /**
@@ -210,27 +218,46 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txNaoReciclavelActionPerformed
 
     private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
-        boolean erro = false;
+        
         try{
+            
             double metal = Double.parseDouble(txMetal.getText());
             double plastico = Double.parseDouble(txPlastico.getText());
             double vidro = Double.parseDouble(txVidro.getText());
             double papel = Double.parseDouble(txPapel.getText());
             double naoReciclavel =Double.parseDouble(txNaoReciclavel.getText());
             String estado = String.valueOf(cbEstado.getSelectedItem());
-            ManipulaDados.novoRegistro(metal, vidro, plastico, papel, naoReciclavel, estado);
-        }catch(java.lang.NumberFormatException t){
-            Component view = null;
-            JOptionPane.showMessageDialog(view, "Insira valores válidos!");
-            erro = true;
-        }
-        if (erro != true){
+            ManipulaDados.novoRegistro(metal, plastico, papel, vidro, naoReciclavel, estado);
+            
             Component view = null;
             JOptionPane.showMessageDialog(view, "Valores Cadastrados com Sucesso!");
+            this.atualizarPagina();
             dispose();
+            
+        }catch(java.lang.NumberFormatException t){
+            
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Insira valores válidos!");
+            
         }
+        
     }//GEN-LAST:event_btGravarActionPerformed
-
+    
+    private void atualizarPagina() {                                               
+        try{
+            
+            Graficos graficos = new Graficos();
+            pnGraficoTipo.removeAll();
+            pnGraficoTipo.add(graficos.criarPizza(), BorderLayout.CENTER);
+            pnGraficoTipo.validate();
+            
+        } catch(java.lang.IndexOutOfBoundsException t){
+            
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Nenhum dado cadastrado!");
+            
+        }
+    }  
     /**
      * @param args the command line arguments
      */
