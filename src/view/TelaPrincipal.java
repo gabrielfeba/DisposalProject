@@ -42,13 +42,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaPorEstado = new javax.swing.JPanel();
         pnGraficoEstado = new javax.swing.JPanel();
         telaPorDia = new javax.swing.JPanel();
+        pnGraficoDia = new javax.swing.JPanel();
         registrarInformacoes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         painelPrincipal.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        pnGraficoTipo.setBackground(new java.awt.Color(102, 102, 255));
         pnGraficoTipo.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout telaPorTipoLayout = new javax.swing.GroupLayout(telaPorTipo);
@@ -64,43 +64,50 @@ public class TelaPrincipal extends javax.swing.JFrame {
             telaPorTipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaPorTipoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnGraficoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addComponent(pnGraficoTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         painelPrincipal.addTab("POR TIPO", telaPorTipo);
 
-        pnGraficoEstado.setBackground(new java.awt.Color(255, 153, 0));
         pnGraficoEstado.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout telaPorEstadoLayout = new javax.swing.GroupLayout(telaPorEstado);
         telaPorEstado.setLayout(telaPorEstadoLayout);
         telaPorEstadoLayout.setHorizontalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(telaPorEstadoLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaPorEstadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         telaPorEstadoLayout.setVerticalGroup(
             telaPorEstadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(telaPorEstadoLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(pnGraficoEstado, javax.swing.GroupLayout.DEFAULT_SIZE, 372, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         painelPrincipal.addTab("POR ESTADO", telaPorEstado);
+
+        pnGraficoDia.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout telaPorDiaLayout = new javax.swing.GroupLayout(telaPorDia);
         telaPorDia.setLayout(telaPorDiaLayout);
         telaPorDiaLayout.setHorizontalGroup(
             telaPorDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 584, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaPorDiaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnGraficoDia, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         telaPorDiaLayout.setVerticalGroup(
             telaPorDiaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaPorDiaLayout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
+                .addComponent(pnGraficoDia, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         painelPrincipal.addTab("POR DIA", telaPorDia);
@@ -142,7 +149,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registrarInformacoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarInformacoesActionPerformed
-        TelaCadastro telaCadastro = new TelaCadastro(pnGraficoTipo);
+        TelaCadastro telaCadastro = new TelaCadastro(pnGraficoTipo, pnGraficoEstado, pnGraficoDia);
         telaCadastro.setVisible(true);
         
     }//GEN-LAST:event_registrarInformacoesActionPerformed
@@ -189,6 +196,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane painelPrincipal;
+    private javax.swing.JPanel pnGraficoDia;
     private javax.swing.JPanel pnGraficoEstado;
     private javax.swing.JPanel pnGraficoTipo;
     private javax.swing.JButton registrarInformacoes;

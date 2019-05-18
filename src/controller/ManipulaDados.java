@@ -42,4 +42,26 @@ public class ManipulaDados {
         
         return new Dados(metal,plastico,papel,vidro,naoReciclavel);
     }
+    public static Dados separaEstado(String estado){
+        Double metal = 0.0;
+        Double plastico = 0.0;
+        Double vidro = 0.0;
+        Double papel = 0.0;
+        Double naoReciclavel = 0.0;
+        for(Dados dado: listaDados) {
+            if(dado.getEstado().equals(estado)) {
+                metal += dado.getMetal();
+                plastico += dado.getPlastico();
+                vidro += dado.getVidro();
+                papel += dado.getPapel();
+                naoReciclavel += dado.getNaoReciclavel();
+            }
+        }
+        return new Dados(metal,plastico,papel,vidro,naoReciclavel);
+    }
+
+    public static ArrayList<Dados> getListaDados() {
+        return listaDados;
+    }
+    
 }

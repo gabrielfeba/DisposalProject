@@ -18,6 +18,8 @@ import models.Graficos;
  */
 public class TelaCadastro extends javax.swing.JFrame {
     JPanel pnGraficoTipo;
+    JPanel pnGraficoEstado;
+    JPanel pnGraficoDia;
     /**
      * Creates new form TelaCadastro
      */
@@ -25,10 +27,14 @@ public class TelaCadastro extends javax.swing.JFrame {
         initComponents();
     }
 
-    TelaCadastro(JPanel pnGraficoTipo) {
+    public TelaCadastro(JPanel pnGraficoTipo, JPanel pnGraficoEstado, JPanel pnGraficoDia) {
         initComponents();
         this.pnGraficoTipo = pnGraficoTipo;
+        this.pnGraficoEstado = pnGraficoEstado;
+        this.pnGraficoDia = pnGraficoDia;
     }
+
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -231,7 +237,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             
             Component view = null;
             JOptionPane.showMessageDialog(view, "Valores Cadastrados com Sucesso!");
-            this.atualizarPagina();
+            this.atualizarPaginaPorTipo();
+            this.atualizarPaginaPorEstado();
+            this.atualizarPaginaPorDia();
+            
             dispose();
             
         }catch(java.lang.NumberFormatException t){
@@ -243,7 +252,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btGravarActionPerformed
     
-    private void atualizarPagina() {                                               
+    private void atualizarPaginaPorTipo() {                                               
         try{
             
             Graficos graficos = new Graficos();
@@ -257,10 +266,40 @@ public class TelaCadastro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(view, "Nenhum dado cadastrado!");
             
         }
+    }
+    
+    private void atualizarPaginaPorEstado() {                                               
+        try{
+            
+            Graficos graficos = new Graficos();
+            pnGraficoEstado.removeAll();
+            pnGraficoEstado.add(graficos.criarColunas(), BorderLayout.CENTER);
+            pnGraficoEstado.validate();
+            
+        } catch(java.lang.IndexOutOfBoundsException t){
+            
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Nenhum dado cadastrado!");
+            
+        }
     }  
-    /**
-     * @param args the command line arguments
-     */
+    
+    private void atualizarPaginaPorDia() {                                               
+        try{
+            
+            Graficos graficos = new Graficos();
+            pnGraficoDia.removeAll();
+            pnGraficoDia.add(graficos.criarLinhas(), BorderLayout.CENTER);
+            pnGraficoDia.validate();
+            
+        } catch(java.lang.IndexOutOfBoundsException t){
+            
+            Component view = null;
+            JOptionPane.showMessageDialog(view, "Nenhum dado cadastrado!");
+            
+        }
+    } 
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
