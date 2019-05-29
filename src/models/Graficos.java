@@ -74,7 +74,7 @@ public class Graficos {
             ds.addValue( ManipulaDados.getListaDados().get(i).getPlastico(), "Plástico", "Dia "+(i+1) );
             ds.addValue( ManipulaDados.getListaDados().get(i).getNaoReciclavel(), "Não Reciclável", "Dia "+(i+1) );
         }
-        JFreeChart grafico = ChartFactory.createLineChart("Teste", "Categorias","Valores", ds,PlotOrientation.VERTICAL, true, true, false );
+        JFreeChart grafico = ChartFactory.createLineChart("Dados por Dia", "Dias","Peso", ds,PlotOrientation.VERTICAL, true, true, false );
         ChartPanel chartPanel = new ChartPanel(grafico);
         return chartPanel;
     }
